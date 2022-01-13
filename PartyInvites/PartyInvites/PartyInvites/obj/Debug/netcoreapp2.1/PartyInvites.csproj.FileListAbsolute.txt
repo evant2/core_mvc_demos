@@ -27,3 +27,4 @@ D:\HDD\Docs\school\TC\asp net\core_mvc_demos\PartyInvites\PartyInvites\PartyInvi
 D:\HDD\Docs\school\TC\asp net\core_mvc_demos\PartyInvites\PartyInvites\PartyInvites\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.cshtml.g.cs
 D:\HDD\Docs\school\TC\asp net\core_mvc_demos\PartyInvites\PartyInvites\PartyInvites\obj\Debug\netcoreapp2.1\Razor\Views\Home\Thanks.cshtml.g.cs
 D:\HDD\Docs\school\TC\asp net\core_mvc_demos\PartyInvites\PartyInvites\PartyInvites\obj\Debug\netcoreapp2.1\Razor\Views\Home\ListResponses.cshtml.g.cs
+D:\HDD\Docs\school\TC\asp net\core_mvc_demos\PartyInvites\PartyInvites\PartyInvites\bin\Debug\netcoreapp2.1\libman.json

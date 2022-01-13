@@ -28,6 +28,7 @@ namespace PartyInvites
             }
 
             app.UseMvcWithDefaultRoute();
+            app.UseFileServer();
         }
     }
 }

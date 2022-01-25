@@ -7,5 +7,9 @@ namespace CDTRacker.Models
 {
     public class CD
     {
+        public string Bank { get; set; }
+
+
+
     }
 }

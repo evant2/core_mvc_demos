@@ -5,8 +5,33 @@
         <title></title>
     </head>
     <body>
-        <div>
-            CDForm
-        </div>
+        <form asp-action="CDForm" method="post">
+            <p>
+                <label asp-for="Bank">Bank:</label>
+                <input asp-for="Bank" />
+            </p>
+
+            <p>
+                <label asp-for="Term">Term (in months):</label>
+                <input asp-for="Term" />
+            </p>
+
+            <p>
+                <label asp-for="Rate">Rate:</label>
+                <input asp-for="Rate" />
+            </p>
+
+            <p>
+                <label asp-for="PurchaseDate">Purchase Date:</label>
+                <input asp-for="PurchaseDate" />
+            </p>
+
+            <p>
+                <label asp-for="DepositAmount">Deposit Amount:</label>
+                <input asp-for="DepositAmount" />
+            </p>
+
+            <button type="submit">Submit CD</button>
+        </form>
     </body>
 </html>

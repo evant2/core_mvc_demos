@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -13,10 +14,14 @@ namespace CDTRacker.Models
         public string Bank { get; set; }
         public int Term { get; set; } //months
         public double Rate { get; set; }
+
+        [DataType(DataType.Date)]
         public DateTime? PurchaseDate { get; set; }
-        public decimal DepositAmount { get; set; }
+        public double DepositAmount { get; set; }
 
         //methods
+
+
         public DateTime? MaturityDate()
         {
             DateTime maturityDate = PurchaseDate.Value.AddMonths(Term);
@@ -25,7 +30,11 @@ namespace CDTRacker.Models
 
         public double ValueAtMaturity()
         {
-            return 0.0;
+            double years = Term / MONTHS_PER_YEAR;
+            double baseMaturity = (1 + (Rate / COMPOUNDING_TERM));
+            double powerMaturity = COMPOUNDING_TERM * years;
+            double valueAtMaturity = DepositAmount * Math.Pow(baseMaturity, powerMaturity);
+            return valueAtMaturity;
         }
     }
 }

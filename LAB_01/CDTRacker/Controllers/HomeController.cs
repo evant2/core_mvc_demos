@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CDTRacker.Models;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,14 @@ namespace CDTRacker.Controllers
         {
             return View();
         }
+        [HttpGet]
         public ActionResult CDForm()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult CDForm(CD cd)
         {
             return View();
         }

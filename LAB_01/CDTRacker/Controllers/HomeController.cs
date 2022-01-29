@@ -11,7 +11,7 @@ namespace CDTRacker.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            return View(CDRepo.CDEntries);
         }
         [HttpGet]
         public ActionResult CDForm()
@@ -22,7 +22,15 @@ namespace CDTRacker.Controllers
         [HttpPost]
         public ActionResult CDForm(CD cd)
         {
-            return View();
+            if (ModelState.IsValid)
+            {
+                CDRepo.AddCD(cd);
+                return View("CDConfirmation",cd);
+            }
+            else
+            {
+                return View();
+            }
         }
 
     }

@@ -1,11 +1,15 @@
 ﻿@model CDTRacker.Models.CD
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <title></title>
-    </head>
+<head>
+    <title>CD Form</title>
+    <link href="~/css/Styles.css" rel="stylesheet" />
+</head>
     <body>
         <form asp-action="CDForm" method="post">
+
+            <div asp-validation-summary="All"></div>
+
             <p>
                 <label asp-for="Bank">Bank:</label>
                 <input asp-for="Bank" />
@@ -17,7 +21,7 @@
             </p>
 
             <p>
-                <label asp-for="Rate">Rate:</label>
+                <label asp-for="Rate">Rate %:</label>
                 <input asp-for="Rate" />
             </p>
 

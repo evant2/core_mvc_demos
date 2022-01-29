@@ -1,13 +1,54 @@
-﻿<html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <title></title>
-    </head>
-    <body>
-        <div>
-            Home controller index view
-            
-            <a asp-action="CDForm">Create a CD</a>
-        </div>
+﻿@model IEnumerable<CDTRacker.Models.CD>
 
-    </body>
+@{
+    Layout = null;
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>My CD Portfolio</title>
+</head>
+<body>
+    <div>
+        <h1>My CD Portfolio</h1>
+        <a asp-action="CDForm">Add a CD</a>
+        @if (CDTRacker.Models.CDRepo.CDEntries.Count() < 1)
+            {
+                <h2>No CDs Currently in the Portfolio</h2>
+            }
+        else { 
+            <table>
+                <thead>
+                    <tr>
+                        <th>Bank</th>
+                        <th>Term</th>
+                        <th>Rate</th>
+                        <th>Purchase Date</th>
+                        <th>Maturity Date</th>
+                        <th>Deposit Amount</th>
+                        <th>Value at Maturity</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (CDTRacker.Models.CD c in Model)
+                    {
+                        <tr>
+                            <td>@c.Bank</td>
+                            <td>@c.Term</td>
+                            <td>@c.Rate %</td>
+                            <td>@c.FormatDate(c.PurchaseDate)</td>
+                            <td>@c.FormatDate(c.MaturityDate())</td>
+                            <td>@c.DepositAmount</td>
+                            <td>@c.FormatAmount(c.ValueAtMaturity())</td>
+                        </tr>  
+                    }
+                </tbody>
+            </table>
+        
+        }
+        
+    </div>
+
+</body>
 </html>

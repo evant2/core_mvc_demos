@@ -4,38 +4,58 @@
 <head>
     <title>CD Form</title>
     <link href="~/css/Styles.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
 </head>
     <body>
-        <form asp-action="CDForm" method="post">
+        <div class="panel-heading text-center">
+            <h2>CD Form</h2>
+        </div>
+        <div class="panel-body ">
+            <form asp-action="CDForm" method="post">
 
-            <div asp-validation-summary="All"></div>
+                <div asp-validation-summary="All"></div>
 
-            <p>
-                <label asp-for="Bank">Bank:</label>
-                <input asp-for="Bank" />
-            </p>
+                <div class="form-group">
+                    <p>
+                        <label asp-for="Bank">Bank:</label>
+                        <input class="form-control" asp-for="Bank" />
+                    </p>
+                </div>
 
-            <p>
-                <label asp-for="Term">Term (in months):</label>
-                <input asp-for="Term" />
-            </p>
+                <div class="form-group">
+                    <p>
+                        <label asp-for="Term">Term (in months):</label>
+                        <input class="form-control" asp-for="Term" />
+                    </p>
+                </div>
 
-            <p>
-                <label asp-for="Rate">Rate %:</label>
-                <input asp-for="Rate" />
-            </p>
+                <div class="form-group">
+                    <p>
+                        <label asp-for="Rate">Rate %:</label>
+                        <input class="form-control" asp-for="Rate" />
+                    </p>
+                </div>
 
-            <p>
-                <label asp-for="PurchaseDate">Purchase Date:</label>
-                <input asp-for="PurchaseDate" />
-            </p>
+                <div class="form-group">
+                    <p>
+                        <label asp-for="DepositAmount">Deposit Amount:</label>
+                        <input class="form-control" asp-for="DepositAmount" />
+                    </p>
+                </div>
 
-            <p>
-                <label asp-for="DepositAmount">Deposit Amount:</label>
-                <input asp-for="DepositAmount" />
-            </p>
+                <div class="form-group">
+                    <p>
+                        <label asp-for="PurchaseDate">Purchase Date:</label>
+                        <input class="form-control" asp-for="PurchaseDate" />
+                    </p>
+                </div>
 
-            <button type="submit">Submit CD</button>
-        </form>
+                <div class="text-center">
+                    <button class="btn btn-primary" type="submit">Submit CD</button>
+                </div>
+
+            </form>
+        </div>
+        
     </body>
 </html>

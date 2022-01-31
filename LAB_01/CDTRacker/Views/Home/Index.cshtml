@@ -7,48 +7,50 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>My CD Portfolio</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
 </head>
 <body>
-    <div>
+    <div class="text-center">
         <h1>My CD Portfolio</h1>
-        <a asp-action="CDForm">Add a CD</a>
-        @if (CDTRacker.Models.CDRepo.CDEntries.Count() < 1)
+        <a class="btn btn-primary" asp-action="CDForm">Add a CD</a>
+        <div class="panel-body">
+            @if (CDTRacker.Models.CDRepo.CDEntries.Count() < 1)
             {
                 <h2>No CDs Currently in the Portfolio</h2>
             }
-        else { 
-            <table>
-                <thead>
-                    <tr>
-                        <th>Bank</th>
-                        <th>Term</th>
-                        <th>Rate</th>
-                        <th>Purchase Date</th>
-                        <th>Maturity Date</th>
-                        <th>Deposit Amount</th>
-                        <th>Value at Maturity</th>
-
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (CDTRacker.Models.CD c in Model)
-                    {
+            else
+            {
+                <table class="table table-sm table-striped table-bordered">
+                    <thead>
                         <tr>
-                            <td>@c.Bank</td>
-                            <td>@c.Term</td>
-                            <td>@c.Rate %</td>
-                            <td>@c.FormatDate(c.PurchaseDate)</td>
-                            <td>@c.FormatDate(c.MaturityDate())</td>
-                            <td>@c.DepositAmount</td>
-                            <td>@c.FormatAmount(c.ValueAtMaturity())</td>
-                        </tr>  
-                    }
-                </tbody>
-            </table>
-        
-        }
-        
-    </div>
+                            <th>Bank</th>
+                            <th>Term</th>
+                            <th>Rate</th>
+                            <th>Purchase Date</th>
+                            <th>Maturity Date</th>
+                            <th>Deposit Amount</th>
+                            <th>Value at Maturity</th>
 
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (CDTRacker.Models.CD c in Model)
+                        {
+                            <tr>
+                                <td>@c.Bank</td>
+                                <td>@c.Term</td>
+                                <td>@c.Rate %</td>
+                                <td>@c.FormatDate(c.PurchaseDate)</td>
+                                <td>@c.FormatDate(c.MaturityDate())</td>
+                                <td>@c.DepositAmount</td>
+                                <td>@c.FormatAmount(c.ValueAtMaturity())</td>
+                            </tr>
+
+                        }
+                    </tbody>
+                </table>
+            }
+        </div>
+    </div>
 </body>
 </html>
